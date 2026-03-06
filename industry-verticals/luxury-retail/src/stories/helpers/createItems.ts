@@ -133,6 +133,7 @@ export const createProductItems = (count: number) => {
         },
       },
       Reviews: createReviews(3),
+      Rating: 5,
     },
   }));
 };
