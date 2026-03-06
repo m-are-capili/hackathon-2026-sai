@@ -1,5 +1,7 @@
 # SitecoreAI Industry Verticals Front End Sites
 
+Cloned from https://github.com/Sitecore/sai-example-industry-verticals
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -16,7 +18,6 @@ Here's a quick overview of the major folders and their purpose:
 
 - `/authoring`:
   The authoring folder is where Sitecore content items are defined and stored for deployment. These items include:
-
   - Templates: located under /items — defines the structure of content items used in the application..
   - Powershell, Modules, etc. Organized by namespace under items/items, useful for modular development and deployment.
   - Modules: Each module has its own .module.json file (e.g., nextjs-starter.module.json) to define what items it includes and where they should be deployed in the Sitecore content tree.
@@ -52,6 +53,7 @@ For developers new to SitecoreAI you can follow the Getting Started Guide on the
 ## Running the Industry Vertical Starter Kit
 
 > **Note:** Please refer to the `README.md` of the specific industry vertical you’re working with for detailed setup instructions.
+>
 > - [healthcare](https://github.com/Sitecore/Sitecore.Demo.SitecoreAI.IndustryVerticals.SiteTemplates/blob/main/industry-verticals/healthcare/README.md)
 > - [luxury-retail](https://github.com/Sitecore/Sitecore.Demo.SitecoreAI.IndustryVerticals.SiteTemplates/blob/main/industry-verticals/luxury-retail/README.md)
 > - [retail](https://github.com/Sitecore/Sitecore.Demo.SitecoreAI.IndustryVerticals.SiteTemplates/blob/main/industry-verticals/retail/README.md)
@@ -80,27 +82,27 @@ It distinguishes between IAR (Item-As-Resources) modules and SCS (Sitecore Conte
 
 #### Serialization & Deployment Strategy
 
-| Category                             | Description                                                                                                        |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Category                             | Description                                                                                                            |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | IAR (Item-As-Resources)              | Items packaged and deployed with the rendering host build (eg: `Project.retail`)                                       |
 | SCS (Sitecore Content Serialization) | Items pushed to Sitecore after deployment using post-actions (eg: `Project.Retail-Content` and `Project.Retail-Media`) |
-| Excluded                             | OOB SitecoreAI items                                                                                                 |
+| Excluded                             | OOB SitecoreAI items                                                                                                   |
 
 ---
 
 #### Serialized Item Summary
 
-| Category                                    | Path                                                           | Serialized | Deployment Type |
-| ------------------------------------------- | -------------------------------------------------------------- | ---------- | --------------- |
-| Project Settings                            | `/sitecore/system/Settings/Project/industry-verticals`         | Yes        | IAR             |
-| Templates                                   | `/sitecore/templates/Project/industry-verticals`               | Yes        | IAR             |
-| Branch Templates                            | `/sitecore/templates/Branches/Project/industry-verticals`      | Yes        | IAR             |
-| Layouts / Renderings / Placeholder Settings | `/sitecore/layout/.../Project/industry-verticals`              | Yes        | IAR             |
-| Tenant Root                                 | `/sitecore/content/industry-verticals`                                     | Yes        | IAR             |
-| Site Root                                   | `/sitecore/content/industry-verticals/{site}`                           | Yes        | SCS             |
-| Home, Data, Dictionary, Presentation        | `/sitecore/content/industry-verticals/{site}/...`                       | Yes        | SCS             |
+| Category                                    | Path                                                        | Serialized | Deployment Type |
+| ------------------------------------------- | ----------------------------------------------------------- | ---------- | --------------- |
+| Project Settings                            | `/sitecore/system/Settings/Project/industry-verticals`      | Yes        | IAR             |
+| Templates                                   | `/sitecore/templates/Project/industry-verticals`            | Yes        | IAR             |
+| Branch Templates                            | `/sitecore/templates/Branches/Project/industry-verticals`   | Yes        | IAR             |
+| Layouts / Renderings / Placeholder Settings | `/sitecore/layout/.../Project/industry-verticals`           | Yes        | IAR             |
+| Tenant Root                                 | `/sitecore/content/industry-verticals`                      | Yes        | IAR             |
+| Site Root                                   | `/sitecore/content/industry-verticals/{site}`               | Yes        | SCS             |
+| Home, Data, Dictionary, Presentation        | `/sitecore/content/industry-verticals/{site}/...`           | Yes        | SCS             |
 | Media Library Folder (structure)            | `/sitecore/media library/Project/industry-verticals/{site}` | Yes        | SCS             |
-| Media Assets                                | `/sitecore/media library/.../*`                                | Yes        | IAR             |
+| Media Assets                                | `/sitecore/media library/.../*`                             | Yes        | IAR             |
 
 ---
 
@@ -126,8 +128,10 @@ sitecore ser push
 
 ## Content Hub Configuration
 
-### Use the starter-verticals if you are using the central instance 
+### Use the starter-verticals if you are using the central instance
+
 Set the envs as follows
+
 ```bash
    - Sitecore_ConnectionStrings_DAM_dot_ContentHub=<Your Instance>
    - SITECORE_AppSettings_damEnabled__define=yes
