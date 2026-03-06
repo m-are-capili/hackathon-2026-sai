@@ -25,6 +25,7 @@ export interface Product {
   SeatHeight: Field<string>;
   LegHeight: Field<string>;
   Reviews: ReviewFields[];
+  Rating: number;
 }
 
 export interface ProductIGQL {
